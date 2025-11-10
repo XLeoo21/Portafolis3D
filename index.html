@@ -1,0 +1,276 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background-image: url('fons1.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        font-family: 'Orbitron', sans-serif;
+        color: #d7b0ff93;
+      }
+
+      #escena-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        border: none;
+      }
+
+      a-scene {
+        width: 100%;
+        height: 100%;
+      }
+
+      /* 🔹 Estils del contenidor de vídeo */
+      #video-container {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+      }
+
+      #video-container video {
+        max-width: 80%;
+        max-height: 80%;
+        border: 4px solid #fff;
+        border-radius: 12px;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="escena-container">
+      <a-scene embedded cursor="rayOrigin: mouse" vr-mode-ui="enabled: false">
+        <a-assets>
+          <!-- Models GLTF -->
+          <a-asset-item id="assetChopper" src="chopper/scene.gltf"></a-asset-item>
+          <a-asset-item id="assetLuffy" src="luffy/scene.gltf"></a-asset-item>
+          <a-asset-item id="assetWhiteBeard" src="white_beard/scene.gltf"></a-asset-item>
+          <a-asset-item id="assetGoingMerry" src="going_merry/scene.gltf"></a-asset-item>
+          <a-asset-item id="assetMeraMera" src="mera_mera_no_mi/scene.gltf"></a-asset-item>
+
+          <!-- Imatges -->
+          <img id="suelo" src="suelo.jpeg" />
+          <img id="cielo" src="cielo.avif"/>
+          <img id="treball1" src="marc2.png"/>
+          <img id="treball2" src="marc3.png"/>
+          <img id="treball3" src="marc4.png"/>
+          <img id="treball4" src="marc5.png"/>
+          <img id="treball5" src="marc6.png"/>
+          <img id="treball6" src="marc7.png"/>
+        </a-assets>
+
+        <!-- Càmera -->
+        <a-entity camera look-controls position="-1 0 0"></a-entity>
+
+        <!-- Il·luminació -->
+        <a-light type="ambient" color="#FFF"></a-light>
+        <a-light type="directional" color="#FFF" intensity="0.3" position="0 1.4 1.7"></a-light>
+
+        <!-- Cel i terra -->
+        <a-sky src="#cielo"></a-sky>
+        <a-cylinder radius="6" height="0.3" src="#suelo"
+          position="-1.3 -1.6 -3.5" scale="0.6 -0.01 0.8"></a-cylinder>
+
+        <!-- Treballs -->
+        <a-image id="treballsM1" src="#treball1"
+          position="-2.492 0.000 -3.110" rotation="0 30 0" visible="false"
+          material="" geometry="primitive: box" scale="0.3 0.3 0.3"
+          animation__enter="startEvents: mouseenter; property: scale; to: 0.31 0.31 0.31; dur: 200"
+          animation__leave="startEvents: mouseleave; property: scale; to: 0.3 0.3 0.3; dur: 500"></a-image>
+
+        <a-image id="treballsM2" src="#treball2"
+          position="-2.810 0.000 -2.780" rotation="0 30 0" visible="false"
+          material="" geometry="primitive: box" scale="0.3 0.3 0.3"
+          animation__enter="startEvents: mouseenter; property: scale; to: 0.31 0.31 0.31; dur: 200"
+          animation__leave="startEvents: mouseleave; property: scale; to: 0.3 0.3 0.3; dur: 500"></a-image>
+
+        <a-image id="treballsM3" src="#treball3"
+          position="-2.858 0.416 -2.799" rotation="0 30 0" visible="false"
+          material="" geometry="primitive: box" scale="0.3 0.3 0.3"
+          animation__enter="startEvents: mouseenter; property: scale; to: 0.31 0.31 0.31; dur: 200"
+          animation__leave="startEvents: mouseleave; property: scale; to: 0.3 0.3 0.3; dur: 500"></a-image>
+
+        <a-image id="treballsM4" src="#treball4"
+          position="-2.560 0.406 -3.241" rotation="0 30 0" visible="false"
+          material="" geometry="primitive: box" scale="0.3 0.3 0.3"
+          animation__enter="startEvents: mouseenter; property: scale; to: 0.31 0.31 0.31; dur: 200"
+          animation__leave="startEvents: mouseleave; property: scale; to: 0.3 0.3 0.3; dur: 500"></a-image>
+
+        <a-image id="treballsM5" src="#treball5"
+          position="-2.227 -0.023 -3.685" rotation="0 30 0" visible="false"
+          material="" geometry="primitive: box" scale="0.3 0.3 0.3"
+          animation__enter="startEvents: mouseenter; property: scale; to: 0.31 0.31 0.31; dur: 200"
+          animation__leave="startEvents: mouseleave; property: scale; to: 0.3 0.3 0.3; dur: 500"></a-image>
+
+        <a-image id="treballsM6" src="#treball6"
+          position="-2.171 0.421 -3.538" rotation="0 30 0" visible="false"
+          material="" geometry="primitive: box" scale="0.3 0.3 0.3"
+          animation__enter="startEvents: mouseenter; property: scale; to: 0.31 0.31 0.31; dur: 200"
+          animation__leave="startEvents: mouseleave; property: scale; to: 0.3 0.3 0.3; dur: 500"></a-image>
+
+        <!-- 🌌 Luffy -->
+        <a-entity id="astronauta" 
+          gltf-model="#assetLuffy"
+          position="0.062 -1.601 -5.475"
+          scale="0.020 0.020 0.020"
+          rotation="0 -10 0"
+          hover-text="text: #text-astronauta"
+          toggle-text="target: #text-luffy-info"
+          animation__enter="startEvents: mouseenter; property: scale; to: 0.021 0.021 0.021; dur: 200"
+          animation__leave="startEvents: mouseleave; property: scale; to: 0.020 0.020 0.020; dur: 500">
+        </a-entity>
+
+        <a-entity id="text-astronauta" position="0.055 2.5 -5.475" visible="false">
+          <a-text value="Sobre mi" align="center" color="#000000" width="10" look-at="[camera]"></a-text>
+        </a-entity>
+
+        <!-- ✨ Text llarg ocult -->
+        <a-entity id="text-luffy-info" position="-2.970 2.374 -4.500" visible="false">
+          <a-text
+            value="Hola, soc Lionnel Laguna, un apassionat del desenvolupament i la creativitat digital. M'encanta combinar tecnologia i disseny per crear experiencies uniques, ja sigui pel desenvolupament d'aplicacions, videojocs o projectes web."
+            align="center"
+            color="#000000"
+            width="6"
+            wrap-count="60"
+            look-at="[camera]">
+          </a-text>
+        </a-entity>
+
+        <!-- 🤖 Chopper -->
+        <a-entity id="android" gltf-model="#assetChopper"
+          position="-4.138 -1.597 -2.500" scale="0.02 0.02 0.02" rotation="0 65.800 0"
+          hover-text="text: #text-android">
+        </a-entity>
+        <a-entity id="text-android" position="-4.138 1.2 -2.500" visible="false">
+          <a-text value="Projectes" align="center" color="#000000" width="10" look-at="[camera]"></a-text>
+        </a-entity>
+
+        <!-- 🐙 WhiteBeard -->
+        <a-entity id="github" gltf-model="#assetWhiteBeard"
+          position="1.403 -1.633 -2.320" scale="0.01 0.01 0.01" rotation="0 -60 0"
+          hover-text="text: #text-github">
+        </a-entity>
+        <a-entity id="text-github" position="1.403 1.442 -2.320" visible="false">
+          <a-text value="GitHub" align="center" color="#000000" width="10" look-at="[camera]"></a-text>
+        </a-entity>
+
+        <!-- 💻 GoingMerry -->
+        <a-entity id="ordinador" gltf-model="#assetGoingMerry"
+          toggle-treballs position="-2.492 -1.580 -5.680" scale="0.5 0.5 0.5"
+          rotation="0 -160.000 0" hover-text="text: #text-ordinador">
+        </a-entity>
+        <a-entity id="text-ordinador" position="-2.492 1.865 -5.680" visible="false">
+          <a-text value="Treballs web" align="center" color="#000000" width="10" look-at="[camera]"></a-text>
+        </a-entity>
+
+        <!-- 🚀 MeraMeraNoMi -->
+        <a-entity id="coet" gltf-model="#assetMeraMera"
+          position="-20.637 5.187 -26.014" scale="0.6 0.6 0.6"
+          rotation="24.656 -33.706 42.032" hover-text="text: #text-coet">
+        </a-entity>
+        <a-entity id="text-coet" position="-20.637 9 -26.014" scale="3 3 3" visible="false">
+          <a-text value="Curriculum" align="center" color="#000000" width="10" look-at="[camera]"></a-text>
+        </a-entity>
+      </a-scene>
+    </div>
+
+    <!-- 🔹 Contenidor de vídeo local -->
+    <div id="video-container">
+      <video id="local-video" width="800" controls>
+        <source src="videos/Video_TCGPokeBot.mp4" type="video/mp4">
+        El teu navegador no admet el vídeo.
+      </video>
+    </div>
+
+    <script>
+      // Hover text
+      AFRAME.registerComponent("hover-text", {
+        schema: { text: { type: "selector" } },
+        init: function () {
+          const model = this.el;
+          const textEl = this.data.text;
+          model.addEventListener("mouseenter", () => textEl.setAttribute("visible", true));
+          model.addEventListener("mouseleave", () => textEl.setAttribute("visible", false));
+        },
+      });
+
+      // Toggle text (Luffy)
+      AFRAME.registerComponent("toggle-text", {
+        schema: { target: { type: "selector" } },
+        init: function () {
+          const model = this.el;
+          const text = this.data.target;
+          let visible = false;
+          model.addEventListener("click", () => {
+            visible = !visible;
+            text.setAttribute("visible", visible);
+          });
+        },
+      });
+
+      // Toggle treballs (ordinador)
+      AFRAME.registerComponent("toggle-treballs", {
+        init: function () {
+          const ordinador = this.el;
+          const treballsIds = [
+            "#treballsM1", "#treballsM2", "#treballsM3",
+            "#treballsM4", "#treballsM5", "#treballsM6"
+          ];
+          let visibles = false;
+          ordinador.addEventListener("click", () => {
+            visibles = !visibles;
+            treballsIds.forEach(id => {
+              const img = document.querySelector(id);
+              if (img) img.setAttribute("visible", visibles);
+            });
+          });
+        },
+      });
+
+      // Enllaços directes
+      document.querySelector("#coet").addEventListener("click", () => {
+        window.open("https://www.linkedin.com/in/lionnel-laguna-fernandez-a12380211/", "_blank");
+      });
+      document.querySelector("#github").addEventListener("click", () => {
+        window.open("https://github.com/XLeoo21", "_blank");
+      });
+
+      // 🔹 Obrir vídeo local en fer clic a Chopper
+      const chopper = document.querySelector("#android");
+      const videoContainer = document.getElementById("video-container");
+      const localVideo = document.getElementById("local-video");
+
+      chopper.addEventListener("click", () => {
+        videoContainer.style.display = "flex";
+        localVideo.currentTime = 0;
+        localVideo.play();
+      });
+
+      // 🔹 Tancar vídeo fent clic fora
+      videoContainer.addEventListener("click", (e) => {
+        if (e.target === videoContainer) {
+          localVideo.pause();
+          videoContainer.style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>

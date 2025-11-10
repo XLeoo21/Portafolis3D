@@ -1,0 +1,11 @@
+Model Information:
+* title:	Luffy One Piece
+* source:	https://sketchfab.com/3d-models/luffy-one-piece-995013faf7ce41c2adb39e11916728e4
+* author:	AnmAn (https://sketchfab.com/anman)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Luffy One Piece" (https://sketchfab.com/3d-models/luffy-one-piece-995013faf7ce41c2adb39e11916728e4) by AnmAn (https://sketchfab.com/anman) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
